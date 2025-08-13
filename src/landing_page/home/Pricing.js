@@ -1,7 +1,10 @@
-export default function Pricing() {
-    return (
-        <div>
+import React from 'react';
 
-        </div>
-    )
+
+function Pricing() {
+    return (
+        <h1>Pricing</h1>
+    );
 }
+
+export default Pricing;

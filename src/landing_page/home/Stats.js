@@ -1,7 +1,10 @@
-export default function Stats() {
-    return (
-        <div>
+import React from 'react';
 
-        </div>
-    )
+
+function Stats() {
+    return (
+        <h1>Stats</h1>
+    );
 }
+
+export default Stats;

@@ -1,7 +1,10 @@
-export default function Hero() {
-    return (
-        <div>
+import React from 'react';
 
-        </div>
-    )
+
+function Hero() {
+    return (
+        <h1>Hero</h1>
+    );
 }
+
+export default Hero;

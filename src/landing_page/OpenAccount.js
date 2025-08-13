@@ -1,7 +1,10 @@
-export default function OpenAccount() {
-    return (
-        <div>
+import React from 'react';
 
-        </div>
-    )
+
+function OpenAccount() {
+    return (
+        <h1>OpenAccount</h1>
+    );
 }
+
+export default OpenAccount;

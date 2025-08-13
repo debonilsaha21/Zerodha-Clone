@@ -1,7 +1,11 @@
-export default function Education() {
-    return (
-        <div>
+import React from 'react';
 
-        </div>
-    )
+function Education() {
+    return (
+
+        <h1>Education</h1>
+
+    );
 }
+
+export default Education;
