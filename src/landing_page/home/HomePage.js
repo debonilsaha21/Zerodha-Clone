@@ -10,16 +10,14 @@ import Footer from "../Footer.js";
 
 function HomePage() {
     return (
-        <>
-            <Navbar />
+        <main>
             <Hero />
             <Awards />
             <Stats />
             <Pricing />
             <Education />
-            <OpenAccount />
-            <Footer />
-        </>
+            <OpenAccount />  
+        </main>
 
     );
 }

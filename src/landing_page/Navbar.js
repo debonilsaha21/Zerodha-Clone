@@ -1,48 +1,90 @@
-import React from 'react';
-
+import React, { useState } from 'react';
+import "./Navbar.css";
+import { Link } from "react-router-dom";
 
 function Navbar() {
+    const [menuOpen, setMenuOpen] = useState(false);
+    function toggleMenu(){
+        setMenuOpen((currMenuOpen)=>{
+            return !currMenuOpen;
+        })
+    }
+
     return (
-        
-            <nav class="navbar navbar-expand-lg border-bottom mx-5" style={{backgroundColor:"white"}}>
-                <div class="container-fluid">
-                    <a className="navbar-brand" href="#">
-                        <img src='resources/logo.svg' alt='resources/loading.svg' className='w-25'/>
-                    </a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                            <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="#">Home</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Link</a>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    Dropdown
-                                </a>
-                                <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="#">Action</a></li>
-                                    <li><a class="dropdown-item" href="#">Another action</a></li>
-                                    <li><hr class="dropdown-divider" /></li>
-                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
-                                </ul>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link disabled" aria-disabled="true">Disabled</a>
-                            </li>
-                        </ul>
-                        <form class="d-flex" role="search">
-                            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-                            <button class="btn btn-outline-success" type="submit">Search</button>
-                        </form>
+        <>
+        <header>
+            <nav className="navbar">
+                <div className="icon">
+                    <Link to="/"><img src="resources/logo (1).svg"/></Link>  
+                </div>
+                <div className="items">
+                    <div><Link to="/signup">Signup</Link></div>
+                    <div><Link to="/about">About</Link></div>
+                    <div><Link to="/products">Products</Link></div>
+                    <div><Link to="/pricing">Pricing</Link></div>
+                    <div><Link to="/support">Support</Link></div>
+                    <div >
+                    <i className="fa-solid fa-bars menu-toggle" onClick={toggleMenu} style={{fontSize: "larger"}}></i>
+                </div>
+            </div>   
+            </nav>
+        </header>
+    {menuOpen && <div className="floating-menu">
+                <div className="products">
+                    <div className="kite">
+                        <img src="resources/kite-logo.svg" className="kite-logo"/>
+                        <h2>Kite</h2>
+                        <p>Trading Platform</p>
+                    </div>
+                    <div className="console">
+                        <img src="resources/console.svg" className="console-logo"/>
+                        <h2>Console</h2>
+                        <p>BackOffice</p>
+                    </div>
+                    <div className="kite-connect">
+                        <img src="resources/kite-connect.svg" className="kite-connect-logo"/>
+                        <h2>Kite Connect</h2>
+                        <p>Trading APIs</p>
+                    </div>
+                    <div className="Coin">
+                        <img src="resources/coin.svg" className="coin-logo"/>
+                        <h2>Coin</h2>
+                        <p>Mutual Funds</p>
                     </div>
                 </div>
-            </nav>
-        
+                <div className="extras">
+                    <div className="Utilities">
+                        <h2>Utilities</h2>
+                        <p>Calculators</p>
+                        <p>Brokerage Calculator</p>
+                        <p>Margin Calculator</p>
+                        <p>SIP Calculator</p>
+                    </div>
+                    <div className="Updates">
+                        <h2>Updates</h2>
+                        <p>Z-Connect Blog</p>
+                        <p>Circulars/Bulletin</p>
+                        <p>IPOs</p>
+                        <p>Markets</p>
+                    </div>
+                    <div className="education">
+                        <h2 style={{textAlign: "left !important"}}>Education</h2>
+                        <div className="education-content">
+                            <div className="varsity" >
+                                <img src="resources/varsity.png"/>
+                                <p>Varsity</p>
+                            </div>
+                            <div className="qna">
+                                <img src="resources/tqna.png"/>
+                                <p>Trading Q&A</p>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>}
+
+        </>    
     );
 }
 
